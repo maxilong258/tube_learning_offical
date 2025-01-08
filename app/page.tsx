@@ -1,8 +1,6 @@
 "use client"
 
 import Link from "next/link"
-
-import { siteConfig } from "@/config/site"
 import { Button } from "@/components/ui/button"
 import styles from './index.module.css'
 
