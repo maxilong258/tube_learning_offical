@@ -1,0 +1,17 @@
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-320px * 3)); /* 根据卡片数量和宽度调整 */
+  }
+}
+
+.animateScroll {
+  animation: scroll 30s linear infinite;
+}
+
+/* 鼠标悬停时暂停动画 */
+.animateScroll:hover {
+  animation-play-state: paused;
+}
