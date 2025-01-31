@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import styles from './index.module.css'
+import { Download } from "lucide-react";
 
 export default function IndexPage() {
 
@@ -82,6 +83,15 @@ export default function IndexPage() {
               alt="Get it on Google Play" 
               className="h-16 w-auto"
             />
+          </Link>
+          <Link 
+            href="/downloads/engsub.apk" 
+            className="flex items-center px-6"
+          >
+            <span className="text-gray-200 text-lg font-medium"> 
+              <Download className="inline mr-1" />
+              Download APK 
+            </span>
           </Link>
         </div>
       </div>
