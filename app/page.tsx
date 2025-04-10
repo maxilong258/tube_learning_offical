@@ -1,9 +1,7 @@
-"use client"
-
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import styles from './index.module.css'
 import { Download } from "lucide-react";
+import ContactUsBtn from "@/components/ContactUsBtn";
 
 export default function IndexPage() {
 
@@ -157,24 +155,14 @@ export default function IndexPage() {
       {/* 添加页脚 */}
       <footer className="w-full py-6 mt-20 border-t border-gray-800">
         <div className="container flex justify-center items-center">
-          <Button 
-            variant="link"
-            onClick={handleMailClick}
-          >
-            Contact Us
-          </Button>
+          <ContactUsBtn />
         </div>
       </footer>
     </section>
   )
 }
 
-export const handleMailClick = () => {
-  const email = "adc3080027554@gmail.com";
-  const subject = "[Feedback for EngSub]"; 
-  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
-  window.location.href = mailtoLink;
-};
+
 
 interface ReviewCardProps {
   name: string;

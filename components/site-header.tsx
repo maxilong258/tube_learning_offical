@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Mail, Twitter } from "lucide-react"
-import { handleMailClick } from "@/app/page"
+import { handleMailClick } from "./ContactUsBtn"
 
 export function SiteHeader() {
 
