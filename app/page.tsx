@@ -1,6 +1,5 @@
 import Link from "next/link"
 import styles from './index.module.css'
-import { Download } from "lucide-react";
 import ContactUsBtn from "@/components/ContactUsBtn";
 
 export default function IndexPage() {
@@ -49,53 +48,46 @@ export default function IndexPage() {
   ];
 
   return (
-    <section className="container min-h-screen">
-      <video
-        className="absolute top-16 inset-0 w-screen object-contain -z-10 brightness-50"
-        autoPlay
-        muted
-        loop
-        playsInline
-      >
-        <source src="/videos/background.mp4" type="video/mp4" />
-      </video>
+    <>
+      <section className="relative min-h-[calc(100vh-4rem)] w-full overflow-hidden">
+        <video
+          className="absolute inset-0 h-full w-full object-contain -z-10 brightness-50"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="/videos/background.mp4" type="video/mp4" />
+        </video>
 
-      <div className="mt-40 flex max-w-[980px] flex-col items-start gap-6 z-10 pt-6">
-        <h1 className="text-4xl font-extrabold leading-tight tracking-tighter md:text-5xl text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] text-shadow-lg">
-          EngSub  --learn english on YouTube
-        </h1>
-        <p className="max-w-[700px] mt-6 text-2xl text-gray-200 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">
-          免费，无广告，通过YouTube视频学习英语，轻松查阅单词翻译，记录单词，便捷复习，英语学习更加有趣。
-        </p>
+        <div className="container flex min-h-[calc(100vh-4rem)] flex-col justify-center py-16">
+          <div className="flex max-w-[980px] flex-col items-start gap-6 z-10">
+            <h1 className="text-4xl font-extrabold leading-tight tracking-tighter md:text-5xl text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] text-shadow-lg">
+              EngSub  --learn english on YouTube
+            </h1>
+            <p className="max-w-[700px] text-2xl text-gray-200 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">
+              免费，无广告，通过YouTube视频学习英语，轻松查阅单词翻译，记录单词，便捷复习，英语学习更加有趣。
+            </p>
 
-        <div style={{height: '100px'}}></div>
-        {/* 应用商店按钮组 */}
-        <div className="flex flex-wrap gap-6 mt-12">
-          <Link 
-            href="https://play.google.com/store/apps/details?id=com.shiming.tube_learning" 
-            target="_blank"
-            className="transition-all duration-300 hover:scale-105 rounded-xl border-2 border-white/30 hover:border-white/50 p-1 backdrop-blur-sm"
-          >
-            <img 
-              src="/images/play-store-link.png" 
-              alt="Get it on Google Play" 
-              className="h-16 w-auto"
-            />
-          </Link>
-          <Link 
-            href="/downloads/engsub.apk" 
-            className="flex items-center px-6"
-          >
-            <span className="text-gray-200 text-lg font-medium"> 
-              <Download className="inline mr-1" />
-              Download APK 
-            </span>
-          </Link>
+            <div className="flex flex-wrap gap-6 mt-6">
+              <Link
+                href="https://play.google.com/store/apps/details?id=com.shiming.tube_learning"
+                target="_blank"
+                className="transition-all duration-300 hover:scale-105 rounded-xl border-2 border-white/30 hover:border-white/50 p-1 backdrop-blur-sm"
+              >
+                <img
+                  src="/images/play-store-link.png"
+                  alt="Get it on Google Play"
+                  className="h-16 w-auto"
+                />
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* 特性介绍部分 */}
-      <div className="mt-96 z-10">
+      <section className="container z-10 pt-16">
         {/* 特性1：字幕翻译 */}
         <div className="flex flex-col md:flex-row items-center gap-8 mb-20">
           <div className="w-full md:w-1/2">
@@ -150,7 +142,7 @@ export default function IndexPage() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* 添加页脚 */}
       <footer className="w-full py-6 mt-20 border-t border-gray-800">
@@ -158,7 +150,7 @@ export default function IndexPage() {
           <ContactUsBtn />
         </div>
       </footer>
-    </section>
+    </>
   )
 }
 
