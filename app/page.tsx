@@ -7,42 +7,42 @@ export default function IndexPage() {
   const reviews = [
     {
       name: "Yang Liu",
-      avatar: "/avatars/user1.png",
+      avatar: "/avatars/user1.webp",
       content: "界面设计很舒服，操作简单。最重要的是完全免费，没有广告打扰，体验特别好！",
     },
     {
       name: "Kevin Wang",
-      avatar: "/avatars/user2.png",
+      avatar: "/avatars/user2.webp",
       content: "作为一个程序员，经常需要看技术视频。这个应用让我在学技术的同时还能提高英语水平。",
     },
     {
       name: "Tony Yang",
-      avatar: "/avatars/user3.png",
+      avatar: "/avatars/user3.webp",
       content: "每天看着喜欢的YouTube视频学英语，不知不觉单词量就上去了。界面简洁，使用很方便！",
     },
     {
       name: "HaoRan Zhang",
-      avatar: "/avatars/user4.png",
+      avatar: "/avatars/user4.webp",
       content: "让我对记单词又重新提起兴趣",
     },
     {
       name: "Sophie Liu",
-      avatar: "/avatars/user5.png",
+      avatar: "/avatars/user5.webp",
       content: "终于找到一个好用的英语学习工具了！收藏单词功能特别实用，复习起来很方便。",
     },
     {
       name: "David Wu",
-      avatar: "/avatars/user6.png",
+      avatar: "/avatars/user6.webp",
       content: "用了一个月，词汇量明显提升。看美剧学英语真的是很棒的学习方式！",
     },
     {
       name: "Olivia Gao",
-      avatar: "/avatars/user7.png",
+      avatar: "/avatars/user7.webp",
       content: "一口气关注了好多英文博主",
     },
     {
       name: "Lucy Wang",
-      avatar: "/avatars/user8.png",
+      avatar: "/avatars/user8.webp",
       content: "从TED演讲到美剧，各种类型的视频都能学，让英语学习变得更有趣了。",
     },
   ];
@@ -56,6 +56,7 @@ export default function IndexPage() {
           muted
           loop
           playsInline
+          preload="metadata"
         >
           <source src="/videos/background.mp4" type="video/mp4" />
         </video>
@@ -91,9 +92,10 @@ export default function IndexPage() {
         {/* 特性1：字幕翻译 */}
         <div className="flex flex-col md:flex-row items-center gap-8 mb-20">
           <div className="w-full md:w-1/2">
-            <img 
-              src="/images/player-screen.png" 
-              alt="单词查询" 
+            <img
+              src="/images/player-screen.webp"
+              alt="单词查询"
+              loading="lazy"
               className="rounded-xl shadow-lg w-80"
             />
           </div>
@@ -110,9 +112,10 @@ export default function IndexPage() {
         {/* 特性2：单词本 */}
         <div className="flex flex-col md:flex-row-reverse items-center gap-8 mb-20">
           <div className="w-full md:w-1/2">
-            <img 
-              src="/images/review-screen.png" 
-              alt="单词复习" 
+            <img
+              src="/images/review-screen.webp"
+              alt="单词复习"
+              loading="lazy"
               className="rounded-xl shadow-lg w-80 float-end"
             />
           </div>
@@ -130,8 +133,8 @@ export default function IndexPage() {
         <div className="mt-32 mb-20">
 
           <div className="relative w-full overflow-hidden">
-            <div className={`${styles.animateScroll} flex gap-6 py-4`}>
-              {[...reviews, ...reviews, ...reviews].map((review, index) => (
+            <div className={`${styles.animateScroll} gap-6 py-4`}>
+              {[...reviews, ...reviews].map((review, index) => (
                 <ReviewCard
                   key={index}
                   name={review.name}
@@ -167,7 +170,7 @@ const ReviewCard = ({ name, avatar, content }: ReviewCardProps) => {
   return (
     <div className="flex-shrink-0 w-80 bg-slate-800/90 backdrop-blur-md rounded-xl p-6 shadow-lg">
       <div className="flex items-center gap-4 mb-4">
-        <img src={avatar} alt={name} className="w-12 h-12 rounded-full" />
+        <img src={avatar} alt={name} loading="lazy" className="w-12 h-12 rounded-full" />
         <div>
           <h3 className="font-medium text-gray-100">{name}</h3>
           <div className="flex text-yellow-400">
